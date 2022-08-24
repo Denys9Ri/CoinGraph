@@ -37,3 +37,7 @@ C:\Users\denis\OneDrive\Documents\Diplom CoinGraph\CoinGraph\CoinGraph\obj\Debug
 C:\Users\denis\OneDrive\Documents\Diplom CoinGraph\CoinGraph\CoinGraph\obj\Debug\net5.0\CoinGraph.genruntimeconfig.cache
 C:\Users\denis\OneDrive\Documents\Diplom CoinGraph\CoinGraph\CoinGraph\obj\Debug\net5.0\ref\CoinGraph.dll
 C:\Users\denis\OneDrive\Documents\Diplom CoinGraph\CoinGraph\CoinGraph\obj\Debug\net5.0\CoinGraph.csproj.CopyComplete
+C:\Users\denis\OneDrive\Documents\Diplom CoinGraph\CoinGraph\CoinGraph\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\denis\OneDrive\Documents\Diplom CoinGraph\CoinGraph\CoinGraph\bin\Debug\net5.0\xunit.abstractions.dll
+C:\Users\denis\OneDrive\Documents\Diplom CoinGraph\CoinGraph\CoinGraph\bin\Debug\net5.0\xunit.assert.dll
+C:\Users\denis\OneDrive\Documents\Diplom CoinGraph\CoinGraph\CoinGraph\bin\Debug\net5.0\xunit.core.dll
