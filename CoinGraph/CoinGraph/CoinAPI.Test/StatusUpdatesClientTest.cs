@@ -15,7 +15,7 @@ namespace CoinGecko.Test
         
         public StatusUpdatesClientTest()
         {
-            _client = CoinGeckoClient.Instance;
+            _client = CoinGraphClient.Instance;
         }
 
         [Theory]

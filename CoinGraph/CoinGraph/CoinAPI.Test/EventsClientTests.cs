@@ -12,7 +12,7 @@ namespace CoinGecko.Test
 
         public EventsClientTests()
         {
-            _client = CoinGeckoClient.Instance;
+            _client = CoinGraphClient.Instance;
         }
 
         [Fact]

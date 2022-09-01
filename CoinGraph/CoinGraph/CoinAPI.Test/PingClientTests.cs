@@ -10,7 +10,7 @@ namespace CoinGecko.Test
         private readonly ICoinGeckoClient _client;
         public PingClientTests()
         {
-            _client = CoinGeckoClient.Instance;
+            _client = CoinGraphClient.Instance;
         }
         [Fact]
         public async Task Ping_Method_Must_Return_ToTheMoon()

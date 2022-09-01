@@ -11,7 +11,7 @@ namespace CoinGecko.Test
 
         public GlobalClientTests()
         {
-            _client = CoinGeckoClient.Instance;
+            _client = CoinGraphClient.Instance;
         }
 
         [Fact]

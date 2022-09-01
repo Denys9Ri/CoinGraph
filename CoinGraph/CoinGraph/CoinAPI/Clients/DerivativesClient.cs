@@ -2,6 +2,7 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using CoinGecko.ApiEndPoints;
+using CoinGecko.Clients;
 using CoinGecko.Entities.Response.Derivatives;
 using CoinGecko.Interfaces;
 

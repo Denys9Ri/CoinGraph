@@ -11,7 +11,7 @@ namespace CoinGecko.Test
 
         public SearchClientTests()
         {
-            _client = CoinGeckoClient.Instance;
+            _client = CoinGraphClient.Instance;
         }
 
         [Fact]

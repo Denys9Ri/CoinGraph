@@ -10,7 +10,7 @@ namespace CoinGecko.Test
         private readonly ICoinGeckoClient _client;
         public SimpleClientTests()
         {
-            _client = CoinGeckoClient.Instance;
+            _client = CoinGraphClient.Instance;
         }
         [Fact]
         public async Task BTC_To_ETH_Convert_Must_Not_Null()

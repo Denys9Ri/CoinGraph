@@ -10,7 +10,7 @@ namespace CoinGecko.Test
         private readonly ICoinGeckoClient _client;
         public IndexesClientTest()
         {
-            _client = CoinGeckoClient.Instance;
+            _client = CoinGraphClient.Instance;
         }
 
         [Fact]

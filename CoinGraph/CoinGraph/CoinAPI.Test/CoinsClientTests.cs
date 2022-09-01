@@ -16,7 +16,7 @@ namespace CoinGecko.Test
         private readonly Task<Entities.Response.Coins.CoinFullDataById> _allCoinDataBitCoinWithParameter;
         public CoinsClientTests()
         {
-            _client = CoinGeckoClient.Instance;
+            _client = CoinGraphClient.Instance;
             _allCoinDataBitCoin = GetAllCoinDataForBtc();
             _allCoinDataBitCoinWithParameter = GetAllCoinDataWithParameterForBtc();
         }

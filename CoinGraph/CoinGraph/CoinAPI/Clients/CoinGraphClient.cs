@@ -5,9 +5,9 @@ using System.Net.Http;
 
 namespace CoinGecko.Clients
 {
-    public partial class CoinGeckoClient : IDisposable, ICoinGeckoClient
+    public partial class CoinGraphClient : IDisposable, ICoinGeckoClient
     {
-        private static readonly Lazy<CoinGeckoClient> Lazy = new Lazy<CoinGeckoClient>(() => new CoinGeckoClient());
+        private static readonly Lazy<CoinGraphClient> Lazy = new Lazy<CoinGraphClient>(() => new CoinGraphClient());
 
         #region Fields
 
@@ -20,61 +20,61 @@ namespace CoinGecko.Clients
 
         #region Constructors
 
-        public CoinGeckoClient() : this((JsonSerializerSettings)null)
+        public CoinGraphClient() : this((JsonSerializerSettings)null)
         {
         }
 
-        public CoinGeckoClient(string apiKey) : this((JsonSerializerSettings)null, apiKey)
+        public CoinGraphClient(string apiKey) : this((JsonSerializerSettings)null, apiKey)
         {
         }
 
 
-        public CoinGeckoClient(HttpClientHandler httpClientHandler) : this(httpClientHandler, serializerSettings: null)
+        public CoinGraphClient(HttpClientHandler httpClientHandler) : this(httpClientHandler, serializerSettings: null)
         {
         }
 
-        public CoinGeckoClient(HttpClientHandler httpClientHandler, string apiKey) : this(httpClientHandler, null, apiKey)
+        public CoinGraphClient(HttpClientHandler httpClientHandler, string apiKey) : this(httpClientHandler, null, apiKey)
         {
             _apiKey = apiKey;
         }
 
       
 
-        public CoinGeckoClient(JsonSerializerSettings serializerSettings) : this(new HttpClientHandler(), serializerSettings)
+        public CoinGraphClient(JsonSerializerSettings serializerSettings) : this(new HttpClientHandler(), serializerSettings)
         {
         }
 
-        public CoinGeckoClient(JsonSerializerSettings serializerSettings, string apiKey) : this(new HttpClientHandler(), serializerSettings, apiKey)
+        public CoinGraphClient(JsonSerializerSettings serializerSettings, string apiKey) : this(new HttpClientHandler(), serializerSettings, apiKey)
         {
         }
 
 
-        public CoinGeckoClient(HttpClientHandler httpClientHandler, JsonSerializerSettings serializerSettings) : this(new HttpClient(httpClientHandler, true), serializerSettings)
+        public CoinGraphClient(HttpClientHandler httpClientHandler, JsonSerializerSettings serializerSettings) : this(new HttpClient(httpClientHandler, true), serializerSettings)
         {
         }
 
-        public CoinGeckoClient(HttpClientHandler httpClientHandler, JsonSerializerSettings serializerSettings, string apiKey)
+        public CoinGraphClient(HttpClientHandler httpClientHandler, JsonSerializerSettings serializerSettings, string apiKey)
           : this(new HttpClient(httpClientHandler, true), serializerSettings, apiKey)
         {
         }
 
 
-        public CoinGeckoClient(HttpClient httpClient) : this(httpClient, serializerSettings: null)
+        public CoinGraphClient(HttpClient httpClient) : this(httpClient, serializerSettings: null)
         {
         }
 
-        public CoinGeckoClient(HttpClient httpClient, string apiKey) : this(httpClient, null, apiKey)
+        public CoinGraphClient(HttpClient httpClient, string apiKey) : this(httpClient, null, apiKey)
         {
         }
 
 
-        public CoinGeckoClient(HttpClient httpClient, JsonSerializerSettings serializerSettings)
+        public CoinGraphClient(HttpClient httpClient, JsonSerializerSettings serializerSettings)
         {
             _httpClient = httpClient;
             _serializerSettings = serializerSettings;
         }
 
-        public CoinGeckoClient(HttpClient httpClient, JsonSerializerSettings serializerSettings, string apiKey)
+        public CoinGraphClient(HttpClient httpClient, JsonSerializerSettings serializerSettings, string apiKey)
         {
             _httpClient = httpClient;
             _serializerSettings = serializerSettings;
@@ -85,7 +85,7 @@ namespace CoinGecko.Clients
 
         #region Properties
 
-        public static CoinGeckoClient Instance => Lazy.Value;
+        public static CoinGraphClient Instance => Lazy.Value;
 
         public ISimpleClient SimpleClient => new SimpleClient(_httpClient, _serializerSettings, _apiKey);
         public IPingClient PingClient => new PingClient(_httpClient, _serializerSettings, _apiKey);
