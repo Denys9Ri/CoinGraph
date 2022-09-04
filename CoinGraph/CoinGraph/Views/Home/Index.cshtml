@@ -1,11 +1,16 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-<!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
   <div id="tradingview_52421"></div>
-  <div class="tradingview-widget-copyright"><a href="https://ru.tradingview.com/symbols/BTCUSDT/?exchange=BINANCE" rel="noopener" target="_blank"><span class="blue-text">BTC/USDT</span></a> от TradingView</div>
-  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  <div class="tradingview-widget-copyright">
+  <a href="https://ru.tradingview.com/symbols/BTCUSDT/?exchange=BINANCE" rel="noopener" target="_blank">
+  <span class="blue-text">
+  </span>
+  </a> 
+  </div>
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js">
+  </script>
   <script type="text/javascript">
   new TradingView.MediumWidget(
   {
@@ -56,8 +61,8 @@
     ]
   ],
   "chartOnly": false,
-  "width": 1000,
-  "height": 500,
+  "width": 1110,
+  "height": 400,
   "locale": "ru",
   "colorTheme": "dark",
   "autosize": false,
@@ -83,4 +88,11 @@
   );
   </script>
 </div>
-<!-- TradingView Widget END -->
+<crypto-converter-widget shadow symbol live background-color="#131722" border-radius="0.00rem" fiat="united-states-dollar" crypto="bitcoin" amount="1" font-family="Arial, sans-serif" decimal-places="2">
+
+</crypto-converter-widget>
+<a>
+ CoinGraph
+</a>
+<script async src="https://cdn.jsdelivr.net/gh/dejurin/crypto-converter-widget@1.5.2/dist/latest.min.js">
+    </script>

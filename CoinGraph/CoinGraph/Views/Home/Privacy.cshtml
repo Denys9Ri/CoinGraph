@@ -1,6 +1,25 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Information about the creator";
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<div>Hello. My name is Ryabukha Denis, I am 22 years old.</div>
+<div>I was born in the Sumy region, before the war I lived in Irpen, worked in a clinic, checked my eyesight.
+   After the start of the war, I decided to change the type of activity to become a C # developer, found Beetroot and was never mistaken.</div>
+
+ @*  @model CoinGraphConverter
+@{
+    decimal priceUSD = 1000;
+}
+<div>
+    Цена: @priceUSD дол.
+    <div>
+        @($"Курс BTC: {Model.BTC}, цена в USD: {Decimal.Round(Model.ConvertToBTC(priceUSD), 2)}")
+    </div>
+    <div>
+        @($"Курс ETC: {Model.ETH}, цена в USD: {Decimal.Round(Model.ConvertToETH(priceUSD), 2)}")
+    </div>
+    <div>
+        @($"Курс UAH: {Model.UAH10 / 10}, цена в UAH: {Decimal.Round(Model.ConvertToUAH(priceUSD), 2)}")
+    </div>
+</div>*@

@@ -10,10 +10,10 @@ namespace WebAPIApp.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class UsersController : ControllerBase
+    public class ValuesController : ControllerBase
     {
         CoinContext db;
-        public UsersController(CoinContext context)
+        public ValuesController(CoinContext context)
         {
             
         }
@@ -23,7 +23,7 @@ namespace WebAPIApp.Controllers
         //{
         //}
 
-        // GET api/users/5
+       
         [HttpGet("{id}")]
         public async Task<ActionResult<CoinContext>> Get(int id)
         {
