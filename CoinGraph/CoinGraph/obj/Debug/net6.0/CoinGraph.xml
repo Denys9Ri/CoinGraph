@@ -4,5 +4,629 @@
         <name>CoinGraph</name>
     </assembly>
     <members>
+        <member name="M:CoinGecko.Clients.BaseApiClient.AddParameter(System.Uri,System.String,System.String)">
+            <summary>
+            Adds the specified parameter to the Query String.
+            </summary>
+            <param name="url"></param>
+            <param name="paramName">Name of the parameter to add.</param>
+            <param name="paramValue">Value for the parameter to add.</param>
+            <returns>Url with added parameter.</returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.IAsyncApiRepository.GetAsync``1(System.Uri)">
+            <summary>
+                Sends an API request async using GET Method
+            </summary>
+            <param name="resourceUri">The resouce uri path</param>
+            <returns>Asyncronous result turns by TApiResouce</returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.ICoinsClient.GetAllCoinsData">
+            <summary>
+            List all coins with data (name, price, market, developer, community, etc) - paginated by 50
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.ICoinsClient.GetAllCoinsData(System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.String,System.Nullable{System.Boolean})">
+            <summary>
+            List all coins with data (name, price, market, developer, community, etc) - paginated by 50
+            </summary>
+            <param name="order">order by</param>
+            <param name="perPage">Total results per page</param>
+            <param name="page">Page through results</param>
+            <param name="localization">Set to false to exclude localized languages in response</param>
+            <param name="sparkline">Include sparkline 7 days data (true/false) [default: false]</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.ICoinsClient.GetCoinList">
+            <summary>
+            List all supported coins id, name and symbol
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.ICoinsClient.GetCoinList(System.Boolean)">
+            <summary>
+            List all supported coins id, name and symbol
+            </summary>
+            <param name="includePlatform"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.ICoinsClient.GetCoinMarkets(System.String)">
+             <summary>
+             List all supported coins price, market cap, volume, and market related data (no pagination required)
+             </summary>
+             <param name="vsCurrency">The target currency of market data</param>
+             <returns></returns>
+            
+        </member>
+        <member name="M:CoinGecko.Interfaces.ICoinsClient.GetCoinMarkets(System.String,System.String[],System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean,System.String,System.String)">
+            <summary>
+            List all supported coins price, market cap, volume, and market related data (no pagination required)
+            </summary>
+            <param name="vsCurrency">The target currency of market data</param>
+            <param name="ids">List of coin id to filter if you want specific results in comma-separated</param>
+            <param name="category">filter by coin category, only decentralized_finance_defi is supported at the moment</param>
+            <param name="order">Results ordered by</param>
+            <param name="perPage">Total results per page</param>
+            <param name="page">Page through results</param>
+            <param name="sparkline">Include sparkline 7 days data default false</param>
+            <param name="priceChangePercentage">Include price change percentage in 1h, 24h, 7d, 14d, 30d, 200d, 1y (eg. '1h,24h,7d' comma-separated, invalid values will be discarded)</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.ICoinsClient.GetAllCoinDataWithId(System.String)">
+            <summary>
+            Get current data (name, price, market, … including exchange tickers) for a coin.
+            </summary>
+            <param name="id">coin id</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.ICoinsClient.GetAllCoinDataWithId(System.String,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Get current data (name, price, market, … including exchange tickers) for a coin.
+            </summary>
+            <param name="id">coin id</param>
+            <param name="localization">Include all localized languages in response (true/false) [default: true]</param>
+            <param name="tickers">Include tickers data (true/false) [default: true]</param>
+            <param name="marketData">Include market_data (true/false) [default: true]</param>
+            <param name="communityData">Include community_data data (true/false) [default: true]</param>
+            <param name="developerData">Include developer_data data (true/false) [default: true]</param>
+            <param name="sparkline">Include sparkline 7 days data (eg. true, false) [default: false]</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.ICoinsClient.GetTickerByCoinId(System.String)">
+            <summary>
+            Get coin tickers (paginated to 100 items)
+            </summary>
+            <param name="id">coin id</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.ICoinsClient.GetTickerByCoinId(System.String,System.Nullable{System.Int32})">
+            <summary>
+            Get coin tickers (paginated to 100 items)
+            </summary>
+            <param name="id">coin id</param>
+            <param name="page">Page through results</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.ICoinsClient.GetTickerByCoinId(System.String,System.String[],System.Nullable{System.Int32})">
+            <summary>
+            Get coin tickers (paginated to 100 items)
+            </summary>
+            <param name="id">coin id</param>
+            <param name="page">Page through results</param>
+            <param name="exchangeIds">filter results by exchange_ids</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.ICoinsClient.GetTickerByCoinId(System.String,System.String[],System.Nullable{System.Int32},System.String,System.String,System.Boolean)">
+            <summary>
+            Get coin tickers (paginated to 100 items)
+            </summary>
+            <param name="id">coin id</param>
+            <param name="exchangeIds">filter results by exchange_ids</param>
+            <param name="page">Page through results</param>
+            <param name="includeExchangeLogo"></param>
+            <param name="order"></param>
+            <param name="depth"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.ICoinsClient.GetHistoryByCoinId(System.String,System.String,System.String)">
+            <summary>
+            Get historical data (name, price, market, stats) at a given date for a coin
+            </summary>
+            <param name="id">coin id</param>
+            <param name="date">The date of data snapshot in dd-mm-yyyy eg. 30-12-2017</param>
+            <param name="localization">Set to false to exclude localized languages in response</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.ICoinsClient.GetMarketChartsByCoinId(System.String,System.String,System.String)">
+            <summary>
+            Get historical market data include price, market cap, and 24h volume (granularity auto)
+            </summary>
+            <param name="id">coin id</param>
+            <param name="vsCurrency">The target currency of market data (usd, eur, jpy, etc.)</param>
+            <param name="days">Data up to number of days ago (eg. 1,14,30,max)</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.ICoinsClient.GetMarketChartsByCoinId(System.String,System.String,System.String,System.String)">
+            <summary>
+            Get historical market data include price, market cap, and 24h volume (granularity auto)
+            </summary>
+            <param name="id">coin id</param>
+            <param name="vsCurrency">The target currency of market data (usd, eur, jpy, etc.)</param>
+            <param name="days">Data up to number of days ago (eg. 1,14,30,max)</param>
+            <param name="interval"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.ICoinsClient.GetMarketChartRangeByCoinId(System.String,System.String,System.String,System.String)">
+            <summary>
+            Get historical market data include price, market cap, and 24h volume within a range of timestamp
+            </summary>
+            <param name="id">pass the coin id </param>
+            <param name="vsCurrency">The target currency of market data</param>
+            <param name="from">From date in UNIX Timestamp</param>
+            <param name="to">To date in UNIX Timestamp</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.ICoinsClient.GetCoinOhlc(System.String,System.String,System.Int32)">
+            <summary>
+            Get coin's OHLC
+            </summary>
+            <param name="id">pass the coin id (can be obtained from /coins/list) eg. bitcoin</param>
+            <param name="vsCurrency">The target currency of market data (usd, eur, jpy, etc.)</param>
+            <param name="days">Data up to number of days ago (1/7/14/30/90/180/365/max)</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.IContractClient.GetContractData(System.String,System.String)">
+            <summary>
+            Get coin info from contract address
+            </summary>
+            <param name="id">Asset platform (only ethereum is supported at this moment)</param>
+            <param name="contractAddress">Token’s contract address</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.IContractClient.GetMarketChartByContract(System.String,System.String,System.String,System.String)">
+            <summary>
+            Get historical market data include price, market cap, and 24h volume (granularity auto) from a contract address
+            </summary>
+            <param name="id">The id of the platform issuing tokens (Only ethereum is supported for now)</param>
+            <param name="contractAddress">Token’s contract address</param>
+            <param name="vsCurrency">The target currency of market data (usd, eur, jpy, etc.)</param>
+            <param name="days">Data up to number of days ago (eg. 1,14,30,max)</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.IContractClient.GetMarketChartRangeByContract(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Get historical market data include price, market cap, and 24h volume within a range of timestamp (granularity auto) from a contract address
+            </summary>
+            <param name="id">The id of the platform issuing tokens (Only ethereum is supported for now)</param>
+            <param name="contractAddress">Token’s contract address</param>
+            <param name="vsCurrency">The target currency of market data (usd, eur, jpy, etc.)</param>
+            <param name="from">From date in UNIX Timestamp (eg. 1392577232)</param>
+            <param name="to">To date in UNIX Timestamp (eg. 1422577232)</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.IEventsClient.GetEvents">
+            <summary>
+            Get events, paginated by 100
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.IEventsClient.GetEvents(System.String[],System.String[],System.String,System.String,System.String,System.String)">
+            <summary>
+            Get events, paginated by 100
+            </summary>
+            <param name="countryCode">country_code of event (eg. ‘US’)</param>
+            <param name="type">type of event (eg. ‘Conference’)</param>
+            <param name="page">page of results (paginated by 100)</param>
+            <param name="upcommingEventsOnly">lists only upcoming events.(defaults to true, set to false to list all events)</param>
+            <param name="fromDate">lists events after this date yyyy-mm-dd</param>
+            <param name="toDate">lists events before this date yyyy-mm-dd (set upcoming_events_only to false if fetching past events)</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.IEventsClient.GetEventCountry">
+            <summary>
+            Get list of event countries
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.IEventsClient.GetEventTypes">
+            <summary>
+            Get list of event types
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.IExchangeRatesClient.GetExchangeRates">
+            <summary>
+            Get BTC-to-Currency exchange rates
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.IExchangesClient.GetExchanges">
+            <summary>
+            List all exchanges
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.IExchangesClient.GetExchanges(System.Int32,System.String)">
+            <summary>
+            List all exchanges
+            </summary>
+            <param name="perPage">Total results per page</param>
+            <param name="page">page through results</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.IExchangesClient.GetExchangesList">
+            <summary>
+            List all supported markets id and name(no pagination required)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.IExchangesClient.GetExchangesByExchangeId(System.String)">
+            <summary>
+            Get exchange volume in BTC and tickers
+            IMPORTANT:
+            Ticker is_stale is true when ticker that has not been updated/unchanged from the exchange for a while.
+            Ticker is_anomaly is true if ticker’s price is outliered by our system.
+            </summary>
+            <param name="id">exchange id</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.IExchangesClient.GetTickerByExchangeId(System.String)">
+            <summary>
+            Get exchange tickers (paginated)
+            IMPORTANT:
+            Ticker is_stale is true when ticker that has not been updated/unchanged from the exchange for a while.
+            Ticker is_anomaly is true if ticker’s price is outliered by our system.
+            </summary>
+            <param name="id">exchange id</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.IExchangesClient.GetTickerByExchangeId(System.String,System.String)">
+            <summary>
+            Get exchange tickers (paginated)
+            IMPORTANT:
+            Ticker is_stale is true when ticker that has not been updated/unchanged from the exchange for a while.
+            Ticker is_anomaly is true if ticker’s price is outliered by our system.
+            </summary>
+            <param name="id">exchange id</param>
+            <param name="page">Page through results</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.IExchangesClient.GetTickerByExchangeId(System.String,System.String[],System.String,System.String,System.String)">
+            <summary>
+            Get exchange tickers (paginated)
+            IMPORTANT:
+            Ticker is_stale is true when ticker that has not been updated/unchanged from the exchange for a while.
+            Ticker is_anomaly is true if ticker’s price is outliered by our system.
+            </summary>
+            <param name="id">exchange id</param>
+            <param name="coinIds">filter tickers by coin_ids</param>
+            <param name="page">Page through results</param>
+            <param name="includeExchangeLogo"></param>
+            <param name="order"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.IExchangesClient.GetStatusUpdateByExchangeId(System.String,System.Int32)">
+            <summary>
+            Get status updates for a given exchange
+            </summary>
+            <param name="id">pass the exchange id (can be obtained from /exchanges/list) eg. binance</param>
+            <param name="days"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.IExchangesClient.GetVolumeChartsByExchangeId(System.String,System.Int32)">
+            <summary>
+            Get status updates for a given exchange
+            </summary>
+            <param name="id">pass the exchange id (can be obtained from /exchanges/list) eg. binance</param>
+            <param name="days"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.IFinancePlatformsClient.GetFinancePlatforms">
+            <summary>
+            List all finance platforms
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.IFinancePlatformsClient.GetFinancePlatforms(System.Int32,System.String)">
+            <summary>
+            List all finance platforms
+            </summary>
+            <param name="perPage">Total results per page</param>
+            <param name="page">page of results (paginated to 100 by default)</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.IFinancePlatformsClient.GetFinanceProducts">
+            <summary>
+            List all finance products
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.IFinancePlatformsClient.GetFinanceProducts(System.Int32,System.String,System.String,System.String)">
+            <summary>
+            List all finance products
+            </summary>
+            <param name="perPage">Total results per page</param>
+            <param name="page">page of results (paginated to 100 by default)</param>
+            <param name="startAt">start date of the financial products</param>
+            <param name="endAt">end date of the financial products</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.IGlobalClient.GetGlobal">
+            <summary>
+            Get cryptocurrency global data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.IGlobalClient.GetGlobalDeFi">
+            <summary>
+            Get cryptocurrency global decentralized finance(defi) data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.IPingClient.GetPingAsync">
+            <summary>
+            Check API server status
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.ISearchClient.GetSearchTrending">
+            <summary>
+            Top-7 trending coins on CoinGecko as searched by users in the last 24 hours (Ordered by most popular first)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.ISimpleClient.GetSimplePrice(System.String[],System.String[])">
+            <summary>
+            Get the current price of any cryptocurrencies in any other supported currencies that you need.
+            </summary>
+            <param name="ids">id of coins, comma-separated if querying more than 1 coin refers to coins/list</param>
+            <param name="vsCurrencies">vs_currency of coins, comma-separated if querying more than 1 vs_currency
+            *refers to simple/supported_vs_currencies</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.ISimpleClient.GetSimplePrice(System.String[],System.String[],System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Get the current price of any cryptocurrencies in any other supported currencies that you need.
+            </summary>
+            <param name="ids">id of coins, comma-separated if querying more than 1 coin refers to coins/list</param>
+            <param name="vsCurrencies">vs_currency of coins, comma-separated if querying more than 1 vs_currency
+            *refers to simple/supported_vs_currencies</param>
+            <param name="includeMarketCap">to include market_cap</param>
+            <param name="include24HVol">to include 24hr_vol</param>
+            <param name="include24HChange">to include 24hr_change</param>
+            <param name="includeLastUpdatedAt">to include last_updated_at of price</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.ISimpleClient.GetTokenPrice(System.String,System.String[],System.String[])">
+            <summary>
+            Get current price of tokens (using contract addresses) for a given platform in any other currency that you need.
+            </summary>
+            <param name="id">id of coins, comma-separated if querying more than 1 coin refers to coins/list</param>
+            <param name="contractAddress">The contract address of tokens, comma separated</param>
+            <param name="vsCurrencies">vs_currency of coins, comma-separated if querying more than 1 vs_currency
+            *refers to simple/supported_vs_currencies</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.ISimpleClient.GetTokenPrice(System.String,System.String[],System.String[],System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Get current price of tokens (using contract addresses) for a given platform in any other currency that you need.
+            </summary>
+            <param name="id">id of coins, comma-separated if querying more than 1 coin refers to coins/list</param>
+            <param name="contractAddress">The contract address of tokens, comma separated</param>
+            <param name="vsCurrencies">vs_currency of coins, comma-separated if querying more than 1 vs_currency
+            *refers to simple/supported_vs_currencies</param>
+            <param name="includeMarketCap">to include market_cap</param>
+            <param name="include24HVol">to include 24hr_vol</param>
+            <param name="include24HChange">to include 24hr_change</param>
+            <param name="includeLastUpdatedAt">to include last_updated_at of price</param>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.ISimpleClient.GetSupportedVsCurrencies">
+            <summary>
+            Get list of Supported vs currencies.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.IStatusUpdatesClient.GetStatusUpdate">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CoinGecko.Interfaces.IStatusUpdatesClient.GetStatusUpdate(System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            List all status_updates with data (description, category, created_at, user, user_title and pin)
+            </summary>
+            <param name="category">Filtered by category (eg. general, milestone, partnership, exchange_listing, software_release, fund_movement, new_listings, event)</param>
+            <param name="projectType">Filtered by Project Type (eg. coin, market). If left empty returns both status from coins and markets</param>
+            <param name="perPage">Total results per page</param>
+            <param name="page">Page through results</param>
+            <returns></returns>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Aud">
+            <summary>
+                Australian Dollar.
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Brl">
+            <summary>
+                Brazilian Real.
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Cad">
+            <summary>
+                Canadian Dollar.
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Chf">
+            <summary>
+                Swiss Franc.
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Clp">
+            <summary>
+                Chile Peso
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Cny">
+            <summary>
+                Chinese Yuan.
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Czk">
+            <summary>
+                Czech Republic Koruna
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Dkk">
+            <summary>
+                Denmark Krone
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Eur">
+            <summary>
+                Euro.
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Gbp">
+            <summary>
+                British Pound.
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Hkd">
+            <summary>
+                Hong Kong Dollar
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Huf">
+            <summary>
+                Hungary Forint
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Idr">
+            <summary>
+                Indonesian Rupiah.
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Ils">
+            <summary>
+                Israel Shekel
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Inr">
+            <summary>
+                Indian Rupee.
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Jpy">
+            <summary>
+                Japanese Yen.
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Krw">
+            <summary>
+                South Korean Won.
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Mxn">
+            <summary>
+                Mexican Peso.
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Myr">
+            <summary>
+                Malaysia Ringgit
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Nok">
+            <summary>
+                Norway Krone
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Nzd">
+            <summary>
+                New Zealand Dollar
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Php">
+            <summary>
+                Philippines Piso
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Pkr">
+            <summary>
+                Pakistan Rupee
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Pln">
+            <summary>
+                Poland Zloty
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Rub">
+            <summary>
+                Russian Rubble.
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Sek">
+            <summary>
+                Sweden Krona
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Sgd">
+            <summary>
+                Singapore Dollar
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Thb">
+            <summary>
+                Thailand Baht
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Try">
+            <summary>
+                Turkey Lira
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Twd">
+            <summary>
+                Taiwan New Dollar
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Usd">
+            <summary>
+                United States Dollar.
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Zar">
+            <summary>
+                South Africa Rand
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Btc">
+            <summary>
+                Bitcoin
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Eth">
+            <summary>
+                Ethereum
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Xrp">
+            <summary>
+                Ripple
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Ltc">
+            <summary>
+                Litecoin
+            </summary>
+        </member>
+        <member name="P:CoinGecko.Parameters.Currency.Bch">
+            <summary>
+                Bitcoin Cash
+            </summary>
+        </member>
     </members>
 </doc>

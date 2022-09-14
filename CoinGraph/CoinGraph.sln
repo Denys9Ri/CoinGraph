@@ -5,8 +5,6 @@ VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoinGraph", "CoinGraph\CoinGraph.csproj", "{8109C75E-3BF3-4E1F-8BF6-0C5BAB8662E4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APICoin", "APICoin\APICoin.csproj", "{B2065743-B7CE-4866-8099-C5F8E49A9A6A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{8109C75E-3BF3-4E1F-8BF6-0C5BAB8662E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8109C75E-3BF3-4E1F-8BF6-0C5BAB8662E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8109C75E-3BF3-4E1F-8BF6-0C5BAB8662E4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B2065743-B7CE-4866-8099-C5F8E49A9A6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B2065743-B7CE-4866-8099-C5F8E49A9A6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B2065743-B7CE-4866-8099-C5F8E49A9A6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B2065743-B7CE-4866-8099-C5F8E49A9A6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

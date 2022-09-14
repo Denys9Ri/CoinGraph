@@ -7,19 +7,35 @@
 <div>I was born in the Sumy region, before the war I lived in Irpen, worked in a clinic, checked my eyesight.
    After the start of the war, I decided to change the type of activity to become a C # developer, found Beetroot and was never mistaken.</div>
 
- @*  @model CoinGraphConverter
-@{
-    decimal priceUSD = 1000;
-}
-<div>
-    Цена: @priceUSD дол.
-    <div>
-        @($"Курс BTC: {Model.BTC}, цена в USD: {Decimal.Round(Model.ConvertToBTC(priceUSD), 2)}")
-    </div>
-    <div>
-        @($"Курс ETC: {Model.ETH}, цена в USD: {Decimal.Round(Model.ConvertToETH(priceUSD), 2)}")
-    </div>
-    <div>
-        @($"Курс UAH: {Model.UAH10 / 10}, цена в UAH: {Decimal.Round(Model.ConvertToUAH(priceUSD), 2)}")
-    </div>
-</div>*@
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div style="float:left">
+                <asp:Label ID="Label1" runat="server" Text="From"></asp:Label>
+                <h2>From</h2>
+                <br />
+                <asp:DropDownList ID="cFrom" runat="server" Width="131px" DataTextField="CoinName" DataValueField="Price" Height="17px"></asp:DropDownList>
+            </div>
+            
+            <div style="float:left;padding-left:30px">
+                <asp:Label ID="Label2" runat="server" Text="To"></asp:Label>
+                <h2>To</h2>
+                <br />
+                <asp:DropDownList ID="cTo" runat="server" Width="135px" DataTextField="CoinName" DataValueField="Price" Height="20px"></asp:DropDownList>
+                <br />
+            </div>
+            
+            <div style="clear:both;float:left;text-align:center">
+                <br />
+                <h2>enter amount</h2>
+                <asp:TextBox ID="txtFromAmount" runat="server"></asp:TextBox>
+                <input type="text" name="Suma" />
+                <br />
+                <br />
+                <asp:Button ID="Button1" runat="server" Text="Calulate" Width="111px" />
+                <h2>Result</h2>
+                <asp:TextBox ID="txtResultAmount" runat="server" Width="183px" Font-Size="Large"></asp:TextBox>
+            </div>
+        </div>
+    </form>
+</body>

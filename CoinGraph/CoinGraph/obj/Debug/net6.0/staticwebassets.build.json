@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "BYHXHZvbYWJOrDLZELb7E+ZoYJBcvvbTzUMhrv9IQB0=",
+  "Hash": "aCP9zdrQ7z/q6b9nKVJAo/z0ZfOIsDEY17p9DADN5Jg=",
   "Source": "CoinGraph",
   "BasePath": "_content/CoinGraph",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\denis\\OneDrive\\Documents\\Diplom CoinGraph\\CoinGraph\\CoinGraph\\wwwroot\\lib\\bitcoinjs-lib\\bitcoinjs-min.js",
+      "SourceId": "CoinGraph",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\denis\\OneDrive\\Documents\\Diplom CoinGraph\\CoinGraph\\CoinGraph\\wwwroot\\",
+      "BasePath": "_content/CoinGraph",
+      "RelativePath": "lib/bitcoinjs-lib/bitcoinjs-min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bitcoinjs-lib\\bitcoinjs-min.js"
     },
     {
       "Identity": "C:\\Users\\denis\\OneDrive\\Documents\\Diplom CoinGraph\\CoinGraph\\CoinGraph\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

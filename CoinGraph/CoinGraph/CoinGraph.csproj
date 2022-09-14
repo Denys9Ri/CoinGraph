@@ -8,15 +8,40 @@
     <UserSecretsId>4d108521-ec9d-4d1f-afff-bb9874f6c96f</UserSecretsId>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Include="..\.editorconfig" Link=".editorconfig" />
-  </ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;1591</NoWarn>
+    <WarningLevel>7</WarningLevel>
+    <WarningsAsErrors>$(WarningsAsErrors);NU1591</WarningsAsErrors>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;1591</NoWarn>
+    <WarningLevel>7</WarningLevel>
+    <WarningsAsErrors>$(WarningsAsErrors);NU1591</WarningsAsErrors>
+  </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.17" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="CoinGeckoAsyncApi" Version="1.7.0" />
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.ApiDescription.Client" Version="6.0.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="4.1.3" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.8" />
+    <PackageReference Include="MongoDB.Driver" Version="2.17.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="NSwag.ApiDescription.Client" Version="13.16.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="System.Data.Common" Version="4.3.0" />
     <PackageReference Include="xunit.assert" Version="2.4.2" />
     <PackageReference Include="xunit.extensibility.core" Version="2.4.2" />
   </ItemGroup>
@@ -24,5 +49,7 @@
   <ItemGroup>
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
 
 </Project>
