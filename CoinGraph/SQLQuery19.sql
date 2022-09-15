@@ -1,0 +1,22 @@
+IF (NOT EXISTS (SELECT *
+    FROM sys.databases
+	WHERE name = 'CoinDb'))
+BEGIN
+    CREATE DATABASE [CoinDb]
+END
+
+;
+GO
+
+IF (NOT EXISTS (SELECT *
+                FROM INFORMATION_SCHEMA.TABLES
+				WHERE TABLE_SCHEMA = 'dbo'
+				AND TABLE_NAME = 'Coin'))
+BEGIN
+     CREATE TABLE CoinDb.dbo.Coin
+	 (
+	 Id INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+	 CoinName VARCHAR(100) NOT NULL,
+	 Price DECIMAL NOT NULL
+	 )
+END
