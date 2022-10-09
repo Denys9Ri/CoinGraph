@@ -88,11 +88,22 @@
   );
   </script>
 </div>
-<crypto-converter-widget shadow symbol live background-color="#131722" border-radius="0.00rem" fiat="united-states-dollar" crypto="bitcoin" amount="1" font-family="Arial, sans-serif" decimal-places="2">
 
-</crypto-converter-widget>
-<a>
- CoinGraph
-</a>
-<script async src="https://cdn.jsdelivr.net/gh/dejurin/crypto-converter-widget@1.5.2/dist/latest.min.js">
-    </script>
+<form>
+    <select id="currency">
+        <option value="BTC" data-price="19509" selected>BTC</option>
+        <option value="SOL" data-price="32.99">SOL</option>
+        <option value="MATIC" data-price="0.8249">MATIC</option>
+        <option value="AVAX" data-price="16.96">AVAX</option>
+        <option value="ATOM" data-price="13.132">ATOM</option>
+        <option value="ADA" data-price="0.4224">ADA</option>
+        <option value="SHIB" data-price="0.00001106">SHIB</option>
+        <option value="XRP" data-price="0.5195">XRP</option>
+        <option value="DOGE" data-price="0.06192">DOGE</option>
+        <option value="LTC" data-price="53.61">LTC</option>
+        <option value="GALA" data-price="0.04231">GALA</option>
+        </select>
+    <input id="weight" type="text" placeholder="amout">
+</form>
+<div id="result">Result</div>
+<button id = "submit"> Submit </Submit>
