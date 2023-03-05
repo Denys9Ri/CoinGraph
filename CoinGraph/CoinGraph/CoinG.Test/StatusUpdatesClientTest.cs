@@ -23,7 +23,7 @@ namespace CoinGecko.Test
         [InlineData("milestone")]
         public async Task Return_Category_Count_Must_be_Equal_to_All_count(string category)
         {
-            
+             
                 var result = await _client.StatusUpdatesClient.GetStatusUpdate(category, "", 100, 1);
                 var returnProjectCount = result.StatusUpdates.Count(x => x.Category == category);
                 var returnCount = result.StatusUpdates.Length;
